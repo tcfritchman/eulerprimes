@@ -4,19 +4,26 @@ var compute = require('./compute');
 /* Config app */
 var app = express();
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/views/pages');
-app.use(express.static(__dirname + '/styles'));
+app.set('views', __dirname + '/views/');
+app.use('/styles', express.static(__dirname + '/styles'));
+app.use('/scripts', express.static(__dirname + '/scripts'));
 
 /* Routes */
 app.get('/', function(req, res) {
-  res.render('index');
+  res.render('pages/index');
 });
 
-app.get('/single/', function(req, res) {
-  x = req.body.x;
-  y = req.body.y;
+app.get('/single', function(req, res) {
+  console.log('request recieved ' + req.query.x);
+  var x = parseInt(req.query.x);
+  var y = parseInt(req.query.y);
+  if (isNaN(x) || isNaN(y)) {
+    res.status(500).send({ error: 'Not a number' });
+    return;
+  }
   resValue = compute(x,y);
-  res.render('result-single', {result: resValue});
+  res.render('partials/result-single', {result: resValue.toString()});
+  console.log('response sent');
 });
 
 /* Listen */
