@@ -1,0 +1,18 @@
+{
+  "name": "eulerprimes",
+  "version": "0.0.0",
+  "description": "Calculate the Xth prime of length Y of e.",
+  "main": "euler.js",
+  "scripts": {
+    "test": "mocha test --recursive --no-timeouts"
+  },
+  "author": "Thomas Fritchman",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "big.js": "^3.1.3"
+  }
+}
