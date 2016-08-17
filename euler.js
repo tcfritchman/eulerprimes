@@ -4,11 +4,11 @@ var Euler = function() {};
 
 // Translated from Ruby's 'BigMath.E'
 Eulers.prototype.E = function(prec) {
-  /*if (prec < 1) {throw new RangeError('Precision is zero or less');}*/
+  if (prec < 1) {throw new RangeError('Precision is zero or less');}
   var n,one,zero,y,d,z,i,m;
   one = new Big(1);
   zero = new Big(0);
-  n = new Big(prec);
+  n = new Big(prec * 4);
   y = one;
   d = new Big(1);
   z = one;
