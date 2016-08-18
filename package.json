@@ -1,6 +1,6 @@
 {
   "name": "eulerprimes",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Calculate the Xth prime of length Y of e.",
   "main": "euler.js",
   "scripts": {
