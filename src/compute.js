@@ -6,6 +6,7 @@ var compute = function(x, y) {
   if (x < 1) {throw new RangeError('X must be 1 or greater');}
   if (y < 1) {throw new RangeError('Y must be 1 or greater');}
   if (y > 15) return {value: "", position: ""}; // don't calculate if y too big
+  if (x > 15) return {value: "", position: ""}; // don't calculate if x too big
 
   var chunksize = 100; // Size of additional digits compute.
   var chunk = 0;       // Current chunk
