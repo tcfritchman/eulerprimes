@@ -1,0 +1,16 @@
+<table class="table">
+  <tr>
+    <td>X</td>
+    <td>Y</td>
+    <td>Value</td>
+    <td>Position</td>
+  </tr>
+  <% for (var i=0; i<computed.length; i++) { %>
+    <tr>
+      <td><%= computed[i].x %></td>
+      <td><%= computed[i].y %></td>
+      <td><%= computed[i].value %></td>
+      <td><%= computed[i].position %></td>
+    </tr>
+  <% } %>
+</table>

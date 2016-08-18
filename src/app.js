@@ -1,5 +1,5 @@
 var express = require('express');
-var compute = require('./compute');
+var Compute = require('./compute');
 
 /* Config app */
 var app = express();
@@ -14,16 +14,35 @@ app.get('/', function(req, res) {
 });
 
 app.get('/single', function(req, res) {
-  console.log('request recieved ' + req.query.x);
   var x = parseInt(req.query.x);
   var y = parseInt(req.query.y);
   if (isNaN(x) || isNaN(y)) {
     res.status(500).send({ error: 'Not a number' });
     return;
   }
-  resValue = compute(x,y);
-  res.render('partials/result-single', {result: resValue.toString()});
-  console.log('response sent');
+  var computed;
+  try {
+    computed = Compute.compute(x,y);
+  } catch (e) {
+    // do something
+    return;
+  }
+  res.render('partials/result-single', computed);
+});
+
+app.get('/multi', function(req, res) {
+  console.log('receved');
+  var csv = req.query.csv;
+  var computed;
+  try {
+    computed = Compute.multiCompute(csv);
+  } catch (e) {
+    // do something
+    return;
+  }
+  console.log(computed);
+  res.render('partials/result-multi', {computed: computed});
+  console.log('sent');
 });
 
 /* Listen */

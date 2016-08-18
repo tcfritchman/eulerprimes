@@ -1,1 +1,4 @@
-<p id="result-single"><%= result %></p>
+<p id="result-single"><%= value %></p>
+<% if (value != '') { %>
+  <p id="position-single">At position <%= position %></p>
+<% } %>

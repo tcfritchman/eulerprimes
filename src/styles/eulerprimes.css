@@ -1,4 +1,34 @@
+h1 {
+  margin-bottom: 25px;
+}
+
+#wrapper {
+  margin-top: 10px;
+}
+
 #result-single {
-    font-size: 70px;
-    text-align: center;
+  font-size: 70px;
+  text-align: center;
+}
+
+#results-container-multi {
+  margin-top: 45px;
+}
+
+#position-single {
+  text-align: center;
+}
+
+.container {
+  max-width: 560px;
+}
+
+.form-control {
+  max-width: 50%;
+  margin: 10px auto;
+}
+
+.btn {
+  max-width: 90%;
+  margin: 26px auto;
 }
