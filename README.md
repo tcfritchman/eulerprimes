@@ -2,8 +2,10 @@
 Calculate the Xth prime of length Y of e.
 
 ## Installation
-1. Clone repository onto local machine.
-2. Run `npm install`
+Before you begin, make sure you install [node.js](https://nodejs.org/en/download/).
+1. Clone repository onto local machine `git clone https://github.com/tcfritchman/eulerprimes.git`
+2. Enter cloned directory `cd eulerprimes`
+3. Install with `npm install`
 
 ## Running the server
 To run the server execute app.js with `node src/app.js`. You may specify an optional port number as an argument.
