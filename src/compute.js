@@ -34,6 +34,7 @@ var compute = function(x, y) {
 };
 
 var multiCompute = function(csv) {
+  csv = csv.trim();
   var parseResult = Papa.parse(csv);
   var xyPairs = parseResult.data; // array of arrays [x, y]
   if (parseResult.errors.length) {
